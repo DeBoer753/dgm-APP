@@ -1,13 +1,22 @@
 // COMPONENTS
 import Box from "@/components/custom/layout/box";
 import FlexCol from "@/components/custom/layout/flex-col";
+import Image from 'next/image';
 
 // ABOUT
 export default function About() {
     return (
         <>
+            <h1>ABOUT</h1>
             <Box className="border border-red-300 flex justify-center items-center">
-                <h1>IMG</h1>
+            <Image
+                src="/imgs/david_blackwhite.jpg" 
+                alt="Image of David Glass"
+                width={306}            
+                height={160}              
+                className="rounded-md object-cover"
+                priority // Improves LCP by preloading
+            /> 
                 <FlexCol>
                     <h1 className="text-2xl">David Glass</h1> 
                     <p className="">Versatile in many forms of music making, David Glass has
