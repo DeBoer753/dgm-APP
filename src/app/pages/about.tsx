@@ -1,6 +1,5 @@
 // COMPONENTS
 import Box from "@/components/custom/layout/box";
-import FlexCol from "@/components/custom/layout/flex-col";
 import Image from 'next/image';
 
 // ABOUT
@@ -17,7 +16,7 @@ export default function About() {
                 className="rounded-md object-cover"
                 priority // Improves LCP by preloading
             /> 
-                <FlexCol>
+                <div className="flex flex-col">
                     <h1 className="text-2xl">David Glass</h1> 
                     <p className="">Versatile in many forms of music making, David Glass has
                         performed regularly as a solo pianist. David has performed
@@ -38,7 +37,7 @@ export default function About() {
                         past 30 years, David has been teaching piano privately in the
                         cities of Piedmont, Oakland and Berkeley.
                     </p> 
-                </FlexCol>
+                </div>
             </Box>
         </>
     );

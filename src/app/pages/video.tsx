@@ -1,12 +1,12 @@
 // COMPONENTS
 import Image from "next/image";
 import Box from "@/components/custom/layout/box";
-import FlexCol from "@/components/custom/layout/flex-col";
+import FlexCol from "@/components/custom/layout/flex-stack";
 
 // VIDEO
 export default function Video() {
     return (
-        <>
+        <div className="border border-red-300 flex flex-col items-center">
             <h1>VIDEO</h1>
             <h1 className="text-2xl">Breaking Out</h1> 
             <Image
@@ -28,6 +28,6 @@ export default function Video() {
                     </p> 
                 </FlexCol>
             </Box>
-        </>
+        </div>
     );
 }

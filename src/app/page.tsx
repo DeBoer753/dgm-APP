@@ -5,6 +5,7 @@ import Navbar from "@/components/ui/navbar";
 import Banner from "./pages/banner";
 import About from "./pages/about";
 import Video from "./pages/video";
+import Music from "./pages/music";
 
 // HOME (Page or App)
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <Banner /> 
       <About />
       <Video />
+      <Music />
     </div>
   );
 }
