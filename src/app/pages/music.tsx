@@ -63,7 +63,10 @@ export default function Music() {
                                         height={160}              
                                         className="rounded-md object-cover"
                                         priority // Improves LCP by preloading
-                                    /> 
+                                        /> 
+                                        <div>
+                                            <p>{album.description}</p>
+                                        </div>
                                 </CarouselItem>                               
                             ))}
                         </CarouselContent>
@@ -72,9 +75,6 @@ export default function Music() {
                         <CarouselPrevious />
                         <CarouselNext/>
                     </Carousel>
-                    <div>
-                        <p>{albumInfo[activeSlide].description}</p>
-                    </div>
 
                     {/* Dynamic Album Description */}
                 </FlexStack>
