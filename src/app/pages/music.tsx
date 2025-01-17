@@ -1,8 +1,5 @@
 "use client"
 
-// REACT
-import { useState } from "react";
-
 // COMPONENTS
 import Image from "next/image";
 import Box from "@/components/custom/layout/box";
@@ -17,39 +14,56 @@ import {
 
 // MUSIC
 export default function Music() {
-    // Tracks active carousel item:
-    const [activeSlide, setActiveSlide] = useState(0)
 
-    // Album info data to be mapped:
+    // Albums info data to be mapped:
     const albumInfo = [
         {
             image: "/imgs/album_beginning.jpg",
-            alt: "Cover art for 'Beginning of Journey' album",
-            description: "this is a description of Journey"
+            alt: "Cover art for 'Beginning the Journey' album",
+            title: "Beginning the Journey",
+            description: "this is a description Beginning the Journey"
         },
         {
             image: "/imgs/album_beethoven.png",
             alt: "Cover art for 'Beethoven' album",
+            title: "Beethoven Liszt, The Pastoral Symphony",
             description: "this is a description of Beethoven"
         }
     ]
 
-    // Handle navigation clicks:
-    const handleNext = () => {
-        setActiveSlide((prev) => (prev + 1) % albumInfo.length);
-    };
-    
-    const handlePrevious = () => {
-        setActiveSlide((prev) => (prev - 1 + albumInfo.length) % albumInfo.length);
-    };
-
+    // Singles info data to be mapped:
+    const singleInfo = [
+        {
+            image: "/imgs/single_desiree.png",
+            alt: "Cover art for 'Desiree' single",
+            title: "Desiree",
+            description: "this is a description of desiree"
+        },
+        {
+            image: "/imgs/single_gladiator.png",
+            alt: "Cover art for 'Gladiator' single",
+            title: "Gladiator",
+            description: "this is a description of gladiator"
+        },
+        {
+            image: "/imgs/single_honkytonk.png",
+            alt: "Cover art for 'Honky Tonk' single",
+            title: "Honky Tonk",
+            description: "this is a description of honky tonk"
+        },
+        {
+            image: "/imgs/single_changingstates.png",
+            alt: "Cover art for 'Changing States' single",
+            title: "Changing States",
+            description: "this is a description of changing states"
+        }
+    ]
 
     return (
         <div className="border border-red-300">
 
             <h1 className="text-center">MUSIC</h1>
-            <Box className="flex flex-row">
-                
+            <Box className="flex flex-row gap-40">
                 <FlexStack>
                     <h2>Albums</h2>
                     <Carousel className="border border-red-300 w-[400px]">
@@ -64,155 +78,50 @@ export default function Music() {
                                         className="rounded-md object-cover"
                                         priority // Improves LCP by preloading
                                         /> 
-                                        <div>
-                                            <p>{album.description}</p>
-                                        </div>
+                                        <FlexStack>
+                                            <h3>{album.title}</h3>
+                                            <p className="text-center">{album.description}</p>
+                                            <button className="px-3 py-1   text-white font-semibold bg-gradient-to-r from-pink-500 to-red-500 shadow-md hover:opacity-80 transition-opacity">
+                                                Apple Music
+                                            </button>
+                                        </FlexStack>
                                 </CarouselItem>                               
                             ))}
                         </CarouselContent>
-
-                        {/* Navigation Buttons */}  
                         <CarouselPrevious />
                         <CarouselNext/>
                     </Carousel>
+                </FlexStack>
 
-                    {/* Dynamic Album Description */}
+                <FlexStack>
+                    <h2>Singles</h2>
+                    <Carousel className="border border-red-300 w-[400px]">
+                        <CarouselContent>
+                            {singleInfo.map((single, index) => (
+                                <CarouselItem key={index}>
+                                    <Image
+                                        src={single.image}
+                                        alt={single.alt}
+                                        width={391}            
+                                        height={160}              
+                                        className="rounded-md object-cover"
+                                        priority // Improves LCP by preloading
+                                        /> 
+                                        <FlexStack>
+                                            <h3>{single.title}</h3>
+                                            <p className="text-center">{single.description}</p>
+                                            <button className="px-3 py-1  text-white font-semibold bg-gradient-to-r from-pink-500 to-red-500 shadow-md hover:opacity-80 transition-opacity">
+                                                Apple Music
+                                            </button>
+                                        </FlexStack>
+                                </CarouselItem>                               
+                            ))}
+                        </CarouselContent>
+                        <CarouselPrevious />
+                        <CarouselNext/>
+                    </Carousel>
                 </FlexStack>
             </Box>
-
         </div>
     );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-//     return (
-//         <div className="border border-red-300">
-//             <h1 className="text-center">MUSIC</h1>
-//             <Box className="flex flex-row">
-//                 <FlexStack>
-//                     <h2>Albums</h2>
-//                     <Carousel className="border border-red-300 w-[400px]">
-//                         <CarouselContent>
-//                             <CarouselItem>
-//                                 <Image
-//                                     src="/imgs/album_beginning.jpg" 
-//                                     alt="Image of beginning of journey album"
-//                                     width={400}            
-//                                     height={160}              
-//                                     className="rounded-md object-cover"
-//                                     priority // Improves LCP by preloading
-//                                 /> 
-//                             </CarouselItem>
-//                             <CarouselItem>
-//                                 <Image
-//                                     src="/imgs/album_beethoven.png" 
-//                                     alt="Image of beethoven liszt the pastoral symphony album"
-//                                     width={400}            
-//                                     height={160}              
-//                                     className="rounded-md object-cover"
-//                                     priority // Improves LCP by preloading
-//                                 /> 
-//                             </CarouselItem>
-//                         </CarouselContent>
-//                         <CarouselPrevious />
-//                         <CarouselNext />
-//                     </Carousel>
-//                     <div>
-//                         <p>album one div box with content</p>
-//                     </div>
-//                     <div>
-//                         <p>album two div box with content</p>
-//                     </div>
-//                 </FlexStack>
-//                 <FlexStack>
-//                     <h2>Singles</h2>
-//                     <Carousel className="border border-red-300 w-[400px]">
-//                         <CarouselContent>
-//                             <CarouselItem>
-//                             <Image
-//                                     src="/imgs/single_desiree.png" 
-//                                     alt="Image of beethoven liszt the pastoral symphony album"
-//                                     width={400}            
-//                                     height={160}              
-//                                     className="rounded-md object-cover"
-//                                     priority // Improves LCP by preloading
-//                                 /> 
-//                             </CarouselItem>
-//                             <CarouselItem>
-//                             <Image
-//                                     src="/imgs/single_gladiator.png" 
-//                                     alt="Image of beethoven liszt the pastoral symphony album"
-//                                     width={400}            
-//                                     height={160}              
-//                                     className="rounded-md object-cover"
-//                                     priority // Improves LCP by preloading
-//                                 /> 
-//                             </CarouselItem>
-//                             <CarouselItem>
-//                             <Image
-//                                     src="/imgs/single_honkytonk.png" 
-//                                     alt="Image of beethoven liszt the pastoral symphony album"
-//                                     width={400}            
-//                                     height={160}              
-//                                     className="rounded-md object-cover"
-//                                     priority // Improves LCP by preloading
-//                                 /> 
-//                             </CarouselItem>
-//                             <CarouselItem>
-//                             <Image
-//                                     src="/imgs/single_changingstates.png" 
-//                                     alt="Image of beethoven liszt the pastoral symphony album"
-//                                     width={400}            
-//                                     height={160}              
-//                                     className="rounded-md object-cover"
-//                                     priority // Improves LCP by preloading
-//                                 /> 
-//                             </CarouselItem>         
-                            
-//                         </CarouselContent>
-//                         <CarouselPrevious />
-//                         <CarouselNext />
-//                     </Carousel>
-//                     <div>
-//                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut, nulla? Sapiente at, quam alias nostrum repudiandae ipsa officia ex fugit dolorum recusandae ab, quaerat magnam eveniet delectus esse? Vel, perferendis?</p>
-//                     </div>
-//                 </FlexStack>
-//             </Box>
-
-//         </div>
-//     );
-// }
