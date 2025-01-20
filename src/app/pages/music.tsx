@@ -60,10 +60,10 @@ export default function Music() {
     ]
 
     return (
-        <div className="border border-red-300">
+        <div className="flex flex-col items-center bg-emerald-500 w-full h-[800px]">
 
-            <h1 className="text-center">MUSIC</h1>
-            <Box className="flex flex-row gap-40">
+            <h1 className="text-center text-white text-3xl mt-10 mb-10">MUSIC</h1>
+            <Box className="flex items-center justify-center flex-row gap-40 bg-zinc-800 text-white">
                 <FlexStack>
                     <h2>Albums</h2>
                     <Carousel className="border border-red-300 w-[400px]">
@@ -78,7 +78,7 @@ export default function Music() {
                                         className="rounded-md object-cover"
                                         priority // Improves LCP by preloading
                                         /> 
-                                        <FlexStack>
+                                        <FlexStack className="gap-3 bg-zinc-600 pt-3 pb-5">
                                             <h3>{album.title}</h3>
                                             <p className="text-center">{album.description}</p>
                                             <button className="px-3 py-1   text-white font-semibold bg-gradient-to-r from-pink-500 to-red-500 shadow-md hover:opacity-80 transition-opacity">
@@ -107,7 +107,7 @@ export default function Music() {
                                         className="rounded-md object-cover"
                                         priority // Improves LCP by preloading
                                         /> 
-                                        <FlexStack>
+                                        <FlexStack className="bg-zinc-600  pt-3 pb-5">
                                             <h3>{single.title}</h3>
                                             <p className="text-center">{single.description}</p>
                                             <button className="px-3 py-1  text-white font-semibold bg-gradient-to-r from-pink-500 to-red-500 shadow-md hover:opacity-80 transition-opacity">

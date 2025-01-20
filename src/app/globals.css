@@ -62,11 +62,28 @@ body {
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
+@keyframes marquee {
+  from {
+    transform: translateX(0%);
   }
-  body {
-    @apply bg-background text-foreground;
+  to {
+    transform: translateX(-100%);
   }
+}
+
+@keyframes marquee-reverse {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse 30s linear infinite;
 }

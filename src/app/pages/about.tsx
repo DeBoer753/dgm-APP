@@ -5,15 +5,15 @@ import Image from 'next/image';
 // ABOUT
 export default function About() {
     return (
-        <>
-            <h1>ABOUT</h1>
-            <Box className="border border-red-300 flex justify-center items-center">
+        <div className="flex flex-col items-center bg-emerald-700 w-full h-[500px]">
+            <h1 className="text-center text-white text-3xl mt-10 mb-10">ABOUT</h1>
+            <Box className="bg-zinc-800 text-white p-5 gap-5 flex justify-center items-center">
             <Image
                 src="/imgs/david_blackwhite.jpg" 
                 alt="Image of David Glass"
                 width={306}            
                 height={160}              
-                className="rounded-md object-cover"
+                className="object-cover [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]"
                 priority // Improves LCP by preloading
             /> 
                 <div className="flex flex-col">
@@ -39,6 +39,6 @@ export default function About() {
                     </p> 
                 </div>
             </Box>
-        </>
+        </div>
     );
 }
