@@ -1,8 +1,12 @@
-import { motion } from "framer-motion";
+"use client"
+
+// PLUGINS
+import { motion } from "framer-motion"
 
 // COMPONENTS
 import Image from "next/image";
 import Box from "../layout/box";
+import { div } from "motion/react-client";
 
 // INFINITE MARQUEE
 export default function InfiniteMarquee() {  
@@ -19,7 +23,7 @@ export default function InfiniteMarquee() {
         "/imgs/laurels1to10/9.png",
         "/imgs/laurels1to10/10.png"
     ]
-
+    // 11 to 20 laurels: 
     const laurelsRowTwo = [
         "/imgs/laurels11to20/11.png",
         "/imgs/laurels11to20/12.png",
@@ -34,42 +38,111 @@ export default function InfiniteMarquee() {
     ]
 
     return (
-      <div className="flex items-center flex-col bg-emerald-700 justify-center overflow-hidden max-w-[1200px] mx-auto">
-        <Box>
-        <div className="relative overflow-hidden max-w-[1200px] mx-auto">
-        <div className="flex animate-marquee whitespace-nowrap gap-7">
+      <div className="bg-emerald-700 py-8 overflow-hidden">
+      {/* First Row */}
+      <Box>
+        <div className="flex animate-marquee">
           {laurelsRowOne.concat(laurelsRowOne).map((src, index) => (
             <Image
               key={index}
               src={src}
               alt={`Laurel ${index + 1}`}
-              width={100} // Adjust to fit logos
-              height={100} // Adjust to fit logos
+              width={100} // Set the width for each image
+              height={100} // Set the height for each image
               className="object-contain"
             />
           ))}
         </div>
-      </div>
-    </Box>
+      </Box>
 
-    {/* Second Marquee */}
-    <Box>
-      <div className="relative overflow-hidden max-w-[1200px] mx-auto">
-        <div className="flex animate-marquee-reverse whitespace-nowrap gap-7">
-          {laurelsRowTwo.concat(laurelsRowTwo).map((src, index) => (
-            <Image
-              key={index}
-              src={src}
-              alt={`Laurel ${index + 11}`}
-              width={100} // Adjust to fit logos
-              height={100} // Adjust to fit logos
-              className="object-contain"
-            />
-          ))}
-        </div>
-      </div>
-        </Box>
-      </div>
+      {/* Second Row */}
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      // FRAMER MOTION MARQUEE
+
+      // <div className="container mx-auto overflow-hidden">
+      //   <div className="flex marquee-gradient pt-5 pb-3">
+      //     <motion.div initial={{ x: 0 }} animate={{x:"-100%"}} transition={{duration: 30, repeat: Infinity, ease: "linear"}} className="flex flex-shrink-0">
+      //       {laurelsRowOne.map((image, index) => {
+      //         return (
+      //           <Image
+      //             src={image}
+      //             key={index}
+      //             alt={`Image ${index + 1}`}
+      //             width={56}
+      //             height={40}
+      //             className="w-56 h-40 pr-20"
+      //           />
+      //         );
+      //       })}
+      //     </motion.div>
+
+      //     <motion.div initial={{ x: 0 }} animate={{x:"-100%"}} transition={{duration: 30, repeat: Infinity, ease: "linear"}} className="flex flex-shrink-0">
+      //       {laurelsRowOne.map((image, index) => {
+      //         return (
+      //           <Image
+      //             src={image}
+      //             key={index}
+      //             alt={`Image ${index + 1}`}
+      //             width={56}
+      //             height={40}
+      //             className="w-56 h-40 pr-20"
+      //           />
+      //         );
+      //       })}
+      //     </motion.div>
+      //   </div>
+
+      //   <div className="flex marquee-gradient pb-5">
+      //     <motion.div initial={{ x: "-100%" }} animate={{x: 0}}  transition={{duration: 30, repeat: Infinity, ease: "linear"}} className="flex flex-shrink-0">
+      //       {laurelsRowTwo.map((image, index) => {
+      //         return (
+      //           <Image
+      //             src={image}
+      //             key={index}
+      //             alt={`Image ${index + 1}`}
+      //             width={56}
+      //             height={40}
+      //             className="w-56 h-40 pr-20"
+      //           />
+      //         );
+      //       })}
+      //     </motion.div>
+
+      //     <motion.div initial={{ x: "-100%" }} animate={{x: 0}} transition={{duration: 30, repeat: Infinity, ease: "linear"}} className="flex flex-shrink-0">
+      //       {laurelsRowTwo.map((image, index) => {
+      //         return (
+      //           <Image
+      //             src={image}
+      //             key={index}
+      //             alt={`Image ${index + 1}`}
+      //             width={56}
+      //             height={40}
+      //             className="w-56 h-40 pr-20"
+      //           />
+      //         );
+      //       })}
+      //     </motion.div>
+      //   </div>
+      // </div>
     );
   }
   

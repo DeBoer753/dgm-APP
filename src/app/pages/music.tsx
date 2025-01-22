@@ -1,4 +1,4 @@
-"use client"
+"use client" // for framer motion to work
 
 // COMPONENTS
 import Image from "next/image";
