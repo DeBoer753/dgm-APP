@@ -6,9 +6,9 @@ import FlexStack from "@/components/custom/layout/flex-stack";
 // VIDEO
 export default function Video() {
     return (
-        <div className="flex flex-col items-center bg-emerald-600 w-full pb-20">
+        <div className="flex flex-col items-center bg-emerald-600 w-full pb-20 bg-gradient-to-b from-zinc-600 to-zinc-400">
             <h1 className="text-center text-white text-3xl mt-10 mb-10">VIDEO</h1>
-            <FlexStack className="bg-zinc-800 text-white p-5 gap-5 flex justify-center items-center">
+            <FlexStack className="bg-zinc-800 text-white p-5 gap-5 flex justify-center items-center w-11/12 max-w-[1200px]">
                 <h1 className="text-2xl">Breaking Out</h1> 
                 <Image
                     src="/imgs/breakingout_banner.png" 

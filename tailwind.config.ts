@@ -9,7 +9,16 @@ export default {
   ],
   theme: {
   	extend: {
-  		colors: {
+		animation: {
+			marquee: "marquee 5s linear infinite",
+		  },
+		  keyframes: {
+			marquee: {
+			  "0%": { transform: "translateX(0)" },
+			  "100%": { transform: "translateX(-100%)" }, 
+			},
+		  },
+		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
@@ -58,5 +67,5 @@ export default {
   		}
   	}
   },
-//   plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate")],
 } satisfies Config;

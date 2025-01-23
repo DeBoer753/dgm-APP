@@ -1,6 +1,10 @@
+
+"use client"
 // COMPONENTS
 import Navbar from "@/components/ui/navbar"; 
 import InfiniteMarquee from "@/components/custom/animations/infinite-marquee";
+import Marquee from "@/components/custom/animations/Marquee"
+
 
 // PAGES
 import Banner from "./pages/banner";
@@ -16,7 +20,8 @@ export default function Home() {
       <Navbar />
       <div className="flex flex-col ">
         <Banner /> 
-        <InfiniteMarquee />
+        {/* <InfiniteMarquee /> */}
+        {/* <Marquee />  */}
         <About />
         <Video />
         <Music />

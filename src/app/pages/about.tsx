@@ -5,19 +5,21 @@ import Image from 'next/image';
 // ABOUT
 export default function About() {
     return (
-        <div className="flex flex-col items-center bg-emerald-700 w-full h-[500px]">
+        <div className="flex flex-col items-center w-full pb-20  bg-gradient-to-b from-zinc-900 to-zinc-600">
             <h1 className="text-center text-white text-3xl mt-10 mb-10">ABOUT</h1>
-            <Box className="bg-zinc-800 text-white p-5 gap-5 flex justify-center items-center">
+            <Box className="bg-zinc-800 text-white p-5 gap-5 flex justify-center items-center sm:flex-row flex-col shadow-2xl  border-t border-t-white-200 border-l border-r"  >
+                  <div className="absolute inset-0 border-t border-emerald-500 border-opacity-100 border-l-transparent border-r-transparent [mask-image:linear-gradient(to-b,rgba(0,0,0,1),rgba(0,0,0,0))] pointer-events-none"></div>
+            <div className="w-[1500px] bg-cover h-[400px] [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]  hidden sm:block"  style={{ backgroundImage: "url('/imgs/david_blackwhite.jpg')", backgroundPositionX: "40%" }}></div>
             <Image
                 src="/imgs/david_blackwhite.jpg" 
                 alt="Image of David Glass"
-                width={306}            
+                width={500}            
                 height={160}              
-                className="object-cover [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]"
+                className="block sm:hidden object-cover [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)] w-md sm:w-sm"
                 priority // Improves LCP by preloading
             /> 
-                <div className="flex flex-col">
-                    <h1 className="text-2xl">David Glass</h1> 
+                <div className="flex flex-col sm:text-left text-center">
+                    <h1 className="text-2xl ">David Glass</h1> 
                     <p className="">Versatile in many forms of music making, David Glass has
                         performed regularly as a solo pianist. David has performed
                         throughout the USA and Europe.

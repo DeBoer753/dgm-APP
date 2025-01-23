@@ -62,7 +62,7 @@ body {
   }
 }
 
-.marquee-gradient {
+.MyGradient {
   mask-image: linear-gradient(
     to right,
     rgba(0, 0, 0, 0),
@@ -70,30 +70,4 @@ body {
     rgba(0, 0, 0, 1) 90%,
     rgba(0, 0, 0, 0)
   );
-}
-
-@keyframes marquee {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-@keyframes marquee-reverse {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0%);
-  }
-}
-
-.animate-marquee {
-  animation: marquee 5s linear infinite;
-}
-
-.animate-marquee-reverse {
-  animation: marquee-reverse 5s linear infinite;
 }
