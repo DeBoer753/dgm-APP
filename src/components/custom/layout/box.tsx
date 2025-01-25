@@ -7,7 +7,7 @@ interface BoxProps {
 
 export default function Box({ children, className = "" }: BoxProps) {
   return (
-    <div className={`w-full w-11/12 max-w-[1200px] ${className}`}>
+    <div className={`w-11/12 max-w-[1200px] ${className}`}>
       {children}
     </div>
   );

@@ -1,7 +1,9 @@
 import React from "react";
 import MarqueeItem from "./MarqueeItem";
+import { div } from "motion/react-client";
 
 const Marquee = () => {
+
   const upperMarquee = [
     "/imgs/laurels1to10/1.png",
     "/imgs/laurels1to10/2.png",
@@ -29,9 +31,11 @@ const Marquee = () => {
   ];
 
   return (
-    <div className="container mx-auto">
-      <MarqueeItem images={upperMarquee} from={0} to={"-100%"} />
-      <MarqueeItem images={lowerMarquee} from={"-100%"} to={0} />
+    <div className="bg-zinc-800">
+      <div className="container mx-auto pt-5 space-y-5">
+        <MarqueeItem images={upperMarquee} from={0} to={"-100%"} />
+        {/* <MarqueeItem images={lowerMarquee} from={"-100%"} to={0} /> */}
+      </div>
     </div>
   );
 };

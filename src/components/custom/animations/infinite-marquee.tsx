@@ -40,11 +40,7 @@ export default function InfiniteMarquee() {
     ]
 
     return (
-      <div>
 
-      </div>
-    )
-  }
 
       // TAILWIND AND JS
 
@@ -70,73 +66,73 @@ export default function InfiniteMarquee() {
 
       // FRAMER MOTION MARQUEE
 
-  //     <div className="container mx-auto overflow-hidden">
-  //       <div className="flex marquee-gradient pt-5 pb-3">
-  //         <motion.div initial={{ x: 0 }} animate={{x:"-100%"}} transition={{duration: 30, repeat: Infinity, ease: "linear"}} className="flex flex-shrink-0">
-  //           {laurelsRowOne.map((image, index) => {
-  //             return (
-  //               <Image
-  //                 src={image}
-  //                 key={index}
-  //                 alt={`Image ${index + 1}`}
-  //                 width={56}
-  //                 height={40}
-  //                 className="w-56 h-40 pr-20"
-  //               />
-  //             );
-  //           })}
-  //         </motion.div>
+      <div className="container mx-auto overflow-hidden MyGradient">
+        <div className="flex marquee-gradient pt-5 pb-3">
+          <motion.div initial={{ x: 0 }} animate={{x:"-100%"}} transition={{duration: 30, repeat: Infinity, ease: "linear"}} className="flex flex-shrink-0">
+            {laurelsRowOne.map((image, index) => {
+              return (
+                <Image
+                  src={image}
+                  key={index}
+                  alt={`Image ${index + 1}`}
+                  width={56}
+                  height={40}
+                  className="w-56 h-40 pr-20"
+                />
+              );
+            })}
+          </motion.div>
 
-  //         <motion.div initial={{ x: 0 }} animate={{x:"-100%"}} transition={{duration: 30, repeat: Infinity, ease: "linear"}} className="flex flex-shrink-0">
-  //           {laurelsRowOne.map((image, index) => {
-  //             return (
-  //               <Image
-  //                 src={image}
-  //                 key={index}
-  //                 alt={`Image ${index + 1}`}
-  //                 width={56}
-  //                 height={40}
-  //                 className="w-56 h-40 pr-20"
-  //               />
-  //             );
-  //           })}
-  //         </motion.div>
-  //       </div>
+          <motion.div initial={{ x: 0 }} animate={{x:"-100%"}} transition={{duration: 30, repeat: Infinity, ease: "linear"}} className="flex flex-shrink-0">
+            {laurelsRowOne.map((image, index) => {
+              return (
+                <Image
+                  src={image}
+                  key={index}
+                  alt={`Image ${index + 1}`}
+                  width={56}
+                  height={40}
+                  className="w-56 h-40 pr-20"
+                />
+              );
+            })}
+          </motion.div>
+        </div>
 
-  //       <div className="flex marquee-gradient pb-5">
-  //         <motion.div initial={{ x: "-100%" }} animate={{x: 0}}  transition={{duration: 30, repeat: Infinity, ease: "linear"}} className="flex flex-shrink-0">
-  //           {laurelsRowTwo.map((image, index) => {
-  //             return (
-  //               <Image
-  //                 src={image}
-  //                 key={index}
-  //                 alt={`Image ${index + 1}`}
-  //                 width={56}
-  //                 height={40}
-  //                 className="w-56 h-40 pr-20"
-  //               />
-  //             );
-  //           })}
-  //         </motion.div>
+        <div className="flex marquee-gradient pb-5 MyGradient">
+          <motion.div initial={{ x: "-100%" }} animate={{x: 0}}  transition={{duration: 30, repeat: Infinity, ease: "linear"}} className="flex flex-shrink-0">
+            {laurelsRowTwo.map((image, index) => {
+              return (
+                <Image
+                  src={image}
+                  key={index}
+                  alt={`Image ${index + 1}`}
+                  width={56}
+                  height={40}
+                  className="w-56 h-40 pr-20"
+                />
+              );
+            })}
+          </motion.div>
 
-  //         <motion.div initial={{ x: "-100%" }} animate={{x: 0}} transition={{duration: 30, repeat: Infinity, ease: "linear"}} className="flex flex-shrink-0">
-  //           {laurelsRowTwo.map((image, index) => {
-  //             return (
-  //               <Image
-  //                 src={image}
-  //                 key={index}
-  //                 alt={`Image ${index + 1}`}
-  //                 width={56}
-  //                 height={40}
-  //                 className="w-56 h-40 pr-20"
-  //               />
-  //             );
-  //           })}
-  //         </motion.div>
-  //       </div>
-  //   </div>
-  //   );
-  // }
+          <motion.div initial={{ x: "-100%" }} animate={{x: 0}} transition={{duration: 30, repeat: Infinity, ease: "linear"}} className="flex flex-shrink-0">
+            {laurelsRowTwo.map((image, index) => {
+              return (
+                <Image
+                  src={image}
+                  key={index}
+                  alt={`Image ${index + 1}`}
+                  width={56}
+                  height={40}
+                  className="w-56 h-40 pr-20"
+                />
+              );
+            })}
+          </motion.div>
+        </div>
+    </div>
+    );
+  }
   
 
 
