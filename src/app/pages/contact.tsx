@@ -5,7 +5,7 @@ import FlexStack from "@/components/custom/layout/flex-stack";
 // CONTACT
 export default function Contact() {
     return (
-        <div className="flex flex-col items-center bg-emerald-400 w-full h-[800px]">
+        <div className="flex flex-col items-center bg-gradient-to-b from-zinc-200 to-zinc-50 w-full h-[800px]">
             <h1 className="text-center text-white text-3xl mt-10 mb-10">CONTACT</h1>
             <Box className="max-w-sm bg-gray-500 bg-opacity-90 p-8 shadow-lg w-96">
                 <FlexStack>

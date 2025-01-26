@@ -60,7 +60,7 @@ export default function Music() {
     ]
 
     return (
-        <div className="flex flex-col items-center bg-emerald-500 w-full h-[800px]">
+        <div className="flex flex-col items-center bg-gradient-to-b from-zinc-400 to-zinc-200 w-full h-[800px]">
 
             <h1 className="text-center text-white text-3xl mt-10 mb-10">MUSIC</h1>
             <Box className="flex items-center justify-center flex-row gap-40 bg-zinc-800 text-white">
