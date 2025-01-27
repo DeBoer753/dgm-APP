@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 
 const FadingBackground = () => {
-  const [opacity, setOpacity] = useState(0.3); // Initial opacity
+  const [opacity, setOpacity] = useState(0.0); // Initial opacity
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY || window.pageYOffset;
 
       // Adjust opacity dynamically (clamp values between 0 and 1)
-      const newOpacity = Math.min(0, Math.max(0, scrollY / 500));
+      const newOpacity = Math.min(1, Math.max(0, scrollY / 400));
       setOpacity(newOpacity);
     };
 
@@ -18,12 +18,11 @@ const FadingBackground = () => {
 
   return (
     <div
-      className="absolute inset-0 flex items-center justify-center transition-opacity duration-500"
+      className="absolute inset-0 flex items-center justify-center"
       style={{
-        backgroundColor: `rgba(0, 0, 0, ${opacity})`,
+        backgroundColor: `rgba(0, 0, 0, ${opacity})`, // Dynamically set RGBA
       }}
     >
-      {/* <h1 className="text-white">Content Goes Here</h1> */}
     </div>
   );
 };

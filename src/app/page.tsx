@@ -3,6 +3,7 @@
 // COMPONENTS
 import Navbar from "@/components/ui/navbar"; 
 import Marquee from "@/components/custom/animations/Marquee"
+import Footer from "@/components/ui/footer"
 // import InfiniteMarquee from "@/components/custom/animations/infinite-marquee";
 // import TestMarquee from "@/components/custom/animations/test-marquee"
 
@@ -23,8 +24,9 @@ export default function Home() {
         <Marquee /> 
         <About />
         <Video />
-        <Music /> 
+        {/* <Music />  */}
         <Contact />
+        <Footer />
       </div>
     </div>
   );
