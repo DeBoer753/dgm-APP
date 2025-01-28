@@ -14,7 +14,8 @@ export default function Video() {
       
         const images = [
           { src: "/imgs/breakingout_banner.png", alt: "Image of David Glass 1" },
-          { src: "/imgs/david_piano2.jpg", alt: "Image of David Glass 2" },
+          { src: "/imgs/david_trophy.png", alt: "Image of David Glass 2" },
+          { src: "/imgs/david_piano2.png", alt: "Image of David Glass 3" },
         ];
       
         const handleNext = () => {
@@ -30,7 +31,7 @@ export default function Video() {
     return (
         <div className="flex flex-col items-center bg-emerald-600 w-full pt-20 pb-20 bg-gradient-to-b from-zinc-600 to-zinc-400">
             <motion.div className="flex md:flex-row flex-col justify-between max-w-[1200px] w-11/12 h-500 border border-white-100 bg-zinc-800 shadow-2xl" initial={{ opacity: 0 }} whileInView={{ opacity: 1, transition: { duration: 2.0 } }}>
-                <FlexStack className="justify-center text-white border border-red-300 w-full">
+                <FlexStack className="justify-center text-white w-full">
                     <h1 className="text-2xl pt-5 px-10">Video</h1>
                     <h2 className="font-bold text-xl pt-5 px-10">Breaking Out</h2>
                     <p className="py-5 px-10">“Breaking Out” is a short music video produced by David Glass. 
@@ -50,7 +51,7 @@ export default function Video() {
                         className="rounded-md object-contain py-5 px-5 w-full"
                         priority // Improves LCP by preloading
                     /> 
-                    <div className="flex flex-row items-center justify-center text-white pb-5 gap-10">
+                    <div className="flex flex-row items-center justify-center text-white pb-3 gap-10">
                         <ChevronLeft className="h-8 w-8 cursor-pointer hover:text-gray-500" onClick={handlePrev} />
                         <ChevronRight className="h-8 w-8 cursor-pointer hover:text-gray-500" onClick={handleNext}/>
                     </div>

@@ -24,7 +24,7 @@ export default function Home() {
         <Marquee /> 
         <About />
         <Video />
-        {/* <Music />  */}
+        <Music /> 
         <Contact />
         <Footer />
       </div>

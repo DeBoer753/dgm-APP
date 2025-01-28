@@ -21,7 +21,7 @@ export default function About() {
                 <div className="flex flex-col sm:text-left text-center">
                     <h1 className="text-2xl px-5">About</h1> 
                     <h2 className="font-bold text-xl px-5 pt-5">David Glass</h2> 
-                    <p className="px-5 py-5">Versatile in many forms of music making, David Glass has
+                    <motion.div className="px-5 py-5" initial={{ y: 100 }} whileInView={{ y: 0, transition: { duration: 1 } }}>Versatile in many forms of music making, David Glass has
                         performed regularly as a solo pianist. David has performed
                         throughout the USA and Europe.
                         David has released several recordings and singles throughout his
@@ -39,7 +39,7 @@ export default function About() {
                         the New England Conservatory of Music in Boston, CA.For the
                         past 30 years, David has been teaching piano privately in the
                         cities of Piedmont, Oakland and Berkeley.
-                    </p> 
+                    </motion.div> 
                 </div>
             </motion.div>
         </div>

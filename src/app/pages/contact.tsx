@@ -5,7 +5,7 @@ import FlexStack from "@/components/custom/layout/flex-stack";
 // CONTACT
 export default function Contact() {
     return (
-        <div className="flex flex-col items-center bg-gradient-to-b from-zinc-200 to-zinc-50 w-full h-[800px]">
+        <div className="flex flex-col items-center bg-gradient-to-b from-zinc-200 to-zinc-50 w-full h-[800px]" style={{  backgroundImage: `linear-gradient(to bottom, #e4e4e7 0%, rgba(228, 228, 231, 0.7) 40%, rgba(228, 228, 231, 0) 60%), url('/imgs/contact_bg.png')`, backgroundSize: "cover", backgroundRepeat: "no-repeat"}}>
             <h1 className="text-center text-white text-3xl mt-10 mb-10">CONTACT</h1>
             <Box className="max-w-sm bg-gray-500 bg-opacity-90 p-8 shadow-lg w-96">
                 <FlexStack>
