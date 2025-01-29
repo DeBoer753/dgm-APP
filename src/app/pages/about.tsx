@@ -7,19 +7,19 @@ import Image from 'next/image';
 // ABOUT
 export default function About() {
     return (
-        <div className="flex flex-col items-center w-full pt-10 pb-10 bg-gradient-to-b from-zinc-800 to-zinc-600">
-            <motion.div  className="w-11/12 max-w-[1200px] bg-zinc-800 text-white p-5 gap-5 flex justify-center items-center sm:flex-row flex-col shadow-2xl border border-white-200" initial={{ opacity: 0 }} whileInView={{ opacity: 1, transition: { duration: 2.5 } }} viewport={{ once: true }}>
-                <div className="w-[1600px] bg-cover h-[400px] [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]  hidden sm:block"  style={{ backgroundImage: "url('/imgs/david_closeup.jpg')", backgroundPositionX: "50%"}}></div>
-            <Image
-                src="/imgs/david_closeup.jpg" 
-                alt="Image of David Glass"
-                width={320}            
-                height={160}              
-                className="block sm:hidden object-cover [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)] w-md sm:w-sm"
-                priority // Improves LCP by preloading
-            /> 
+        <div className="flex flex-col items-center w-full pt-20 pb-10 bg-gradient-to-b from-zinc-800 to-zinc-600">
+            <motion.div className="w-11/12 max-w-[1200px] bg-zinc-800 text-white p-5 gap-5 flex justify-center items-center sm:flex-row flex-col shadow-2xl border border-white-200" initial={{ opacity: 0 }} whileInView={{ opacity: 1, transition: { duration: 2.5 } }} viewport={{ once: true }}>
+            <div className="w-[1600px] bg-cover h-[400px] [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]  hidden sm:block"  style={{ backgroundImage: "url('/imgs/david_closeup.jpg')", backgroundPositionX: "50%"}}></div>
+                <Image
+                    src="/imgs/david_closeup.jpg" 
+                    alt="Image of David Glass"
+                    width={320}            
+                    height={160}              
+                    className="block sm:hidden object-cover [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)] w-md sm:w-sm"
+                    priority // Improves LCP by preloading
+                /> 
                 <div className="flex flex-col sm:text-left text-center overflow-hidden">
-                    <h1 className="text-2xl px-5">About</h1> 
+                    <h1 className="text-2xl px-5 font-thin">About</h1> 
                     <h2 className="font-bold text-xl px-5 pt-5">David Glass</h2> 
                     <motion.p className="px-5 py-5" initial={{ y: 100 }} whileInView={{ y: 0, transition: { duration: 1 } }} viewport={{ once: true }}>Versatile in many forms of music making, David Glass has
                         performed regularly as a solo pianist. David has performed

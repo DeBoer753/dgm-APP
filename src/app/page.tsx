@@ -1,4 +1,6 @@
+// PLUGINS
 "use client"
+import { useRef } from "react";
 
 // COMPONENTS
 import Navbar from "@/components/ui/navbar"; 
@@ -16,16 +18,44 @@ import Contact from "./pages/contact";
 
 // HOME (Page or App)
 export default function Home() {
+
+  // Create refs for each section for click to scroll                        
+  const homeRef = useRef<HTMLDivElement>(null!);
+  const aboutRef = useRef<HTMLDivElement>(null!);
+  const videoRef = useRef<HTMLDivElement>(null!);
+  const musicRef = useRef<HTMLDivElement>(null!);
+  const contactRef = useRef<HTMLDivElement>(null!);
+
+  
+  
   return (
     <div>
-      <Navbar />
+      <Navbar 
+        homeRef={homeRef}
+        aboutRef={aboutRef}
+        videoRef={videoRef}
+        musicRef={musicRef}
+        contactRef={contactRef}
+      />
       <div className="flex flex-col ">
-        <Banner /> 
-        <Marquee /> 
-        <About />
-        <Video />
-        <Music /> 
-        <Contact />
+        <div ref={homeRef}>
+          <Banner /> 
+        </div>
+        <div >
+          <Marquee /> 
+        </div>
+        <div ref={aboutRef}>
+          <About />
+        </div>
+        <div ref={videoRef}>
+          <Video />
+        </div>
+        {/* <div ref={musicRef}>
+          <Music /> 
+        </div> */}
+        <div ref={contactRef}>
+          <Contact />
+        </div>
         <Footer />
       </div>
     </div>

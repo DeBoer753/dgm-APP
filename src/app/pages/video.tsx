@@ -30,9 +30,9 @@ export default function Video() {
     
     return (
         <div className="flex flex-col items-center bg-emerald-600 w-full pt-20 pb-20 bg-gradient-to-b from-zinc-600 to-zinc-400">
-            <motion.div className="flex md:flex-row flex-col justify-between max-w-[1200px] w-11/12 h-500 p-5 border border-white-100 bg-zinc-800 shadow-2xl" initial={{ opacity: 0 }} whileInView={{ opacity: 1, transition: { duration: 2.0 } }} viewport={{ once: true }}>
+            <motion.div className="flex md:flex-row flex-col justify-between max-w-[1200px] w-11/12 h-500 p-5" initial={{ opacity: 0 }} whileInView={{ opacity: 1, transition: { duration: 2.0 } }} viewport={{ once: true }}>
                 <FlexStack className="justify-center text-white w-full overflow-hidden">
-                    <h1 className="text-2xl pt-5 px-5">Video</h1>
+                    <h1 className="text-2xl pt-5 px-5 font-thin">Video</h1>
                     <h2 className="font-bold text-xl pt-5 px-5">Breaking Out</h2>
                     <motion.p className="py-5 px-5" initial={{ x: -100 }} whileInView={{ x: 0, transition: { duration: 1 }} } viewport={{ once: true }}>“Breaking Out” is a short music video produced by David Glass. 
                         The film is centered around a dramatic piano improvisation David recorded several
