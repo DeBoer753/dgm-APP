@@ -11,7 +11,13 @@ const MarqueeItem = ({ images, from, to }) => {
         className="flex flex-shrink-0"
       >
         {images.map((image, index) => {
-          return <img className="h-25 w-56 pr-20" src={image} key={index} />;
+          return (
+            <img
+              className="h-20 w-auto pr-10 object-contain"
+              src={image}
+              key={index}
+            />
+          );
         })}
       </motion.div>
 
@@ -22,7 +28,13 @@ const MarqueeItem = ({ images, from, to }) => {
         className="flex flex-shrink-0"
       >
         {images.map((image, index) => {
-          return <img className="h-25 w-56 pr-20" src={image} key={index} />;
+          return (
+            <img
+              className="h-20 w-auto pr-10 object-contain"
+              src={image}
+              key={index}
+            />
+          );
         })}
       </motion.div>
     </div>
