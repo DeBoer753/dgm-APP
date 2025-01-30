@@ -40,7 +40,7 @@ export default function About() {
                         past 30 years, David has been teaching piano privately in the
                         cities of Piedmont, Oakland and Berkeley.
                     </motion.p> 
-                </div>
+                </div> 
             </motion.div>
         </div>
     );

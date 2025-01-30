@@ -15,8 +15,8 @@ export default function Contact() {
     };
     
     return (
-        <div className="flex flex-col items-center bg-gradient-to-b from-zinc-200 to-zinc-50 w-full h-[800px] pt-20" style={{  backgroundImage: `linear-gradient(to bottom, #e4e4e7 0%, rgba(228, 228, 231, 0.7) 40%, rgba(228, 228, 231, 0) 60%), url('/imgs/contact_bg.png')`, backgroundSize: "cover", backgroundRepeat: "no-repeat"}}>
-            <div className="max-w-sm bg-gray-700 bg-opacity-90 p-5 shadow-lg w-full">
+        <div className="flex flex-col items-center bg-gradient-to-b from-zinc-200 to-zinc-50 w-full h-[800px] pt-20" style={{  backgroundImage: `url('/imgs/contact_bg.png')`, backgroundSize: "cover", backgroundRepeat: "no-repeat"}}>
+            <div className="max-w-sm bg-orange-950 bg-opacity-90 p-5 shadow-lg w-full">
                 <FlexStack>
                     <h1 className="text-center text-white text-xl font-thin">CONTACT</h1> 
                     <form onSubmit={handleSubmit} action="#" method="POST" className="space-y-4">

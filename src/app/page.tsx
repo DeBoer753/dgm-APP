@@ -14,6 +14,7 @@ import Banner from "./pages/banner";
 import About from "./pages/about";
 import Video from "./pages/video";
 import Music from "./pages/music";
+import Music2 from "./pages/music2";
 import Contact from "./pages/contact";
 
 // HOME (Page or App)
@@ -53,6 +54,9 @@ export default function Home() {
         {/* <div ref={musicRef}>
           <Music /> 
         </div> */}
+        <div>
+          <Music2 />
+        </div>
         <div ref={contactRef}>
           <Contact />
         </div>
