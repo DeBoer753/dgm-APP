@@ -6,15 +6,13 @@ import { useRef } from "react";
 import Navbar from "@/components/ui/navbar"; 
 import Marquee from "@/components/custom/animations/Marquee"
 import Footer from "@/components/ui/footer"
-// import InfiniteMarquee from "@/components/custom/animations/infinite-marquee";
-// import TestMarquee from "@/components/custom/animations/test-marquee"
+import Head from "next/head";
 
 // PAGES
 import Banner from "./pages/banner";
 import About from "./pages/about";
 import Video from "./pages/video";
 import Music from "./pages/music";
-import Music2 from "./pages/music2";
 import Contact from "./pages/contact";
 
 // HOME (Page or App)
@@ -27,10 +25,11 @@ export default function Home() {
   const musicRef = useRef<HTMLDivElement>(null!);
   const contactRef = useRef<HTMLDivElement>(null!);
 
-  
-  
   return (
     <div>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+      </Head>
       <Navbar 
         homeRef={homeRef}
         aboutRef={aboutRef}
@@ -51,14 +50,13 @@ export default function Home() {
         <div ref={videoRef}>
           <Video />
         </div>
-        {/* <div ref={musicRef}>
-          <Music /> 
-        </div> */}
-        <div>
-          <Music2 />
-        </div>
-        <div ref={contactRef}>
-          <Contact />
+        <div style={{backgroundImage: `linear-gradient(to bottom, rgba(161, 161, 170, 1) 0%, rgba(161, 161, 170, 0.7) 30%, rgba(228, 228, 231, 0) 80%), url('/imgs/music&contact_bg.jpg')`, backgroundSize: "cover", backgroundRepeat: "no-repeat"}}>
+          <div ref={musicRef}>
+            <Music />
+          </div>
+          <div ref={contactRef}>
+            <Contact />
+          </div>
         </div>
         <Footer />
       </div>

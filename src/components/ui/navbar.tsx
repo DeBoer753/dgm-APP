@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react"; // Icons for open/close
+import Image from "next/image";
 
 // INTERFACE
 interface NavbarProps {
@@ -37,25 +38,45 @@ export default function Navbar({ homeRef, aboutRef, videoRef, musicRef, contactR
   return (
     <nav className="sticky top-0 z-50 bg-zinc-800 py-4 px-5 flex justify-between items-center shadow-md">
       {/* Logo */}
-      <div className="text-2xl text-white">LOGO</div>
+        <div className="w-[30px]">
+          <Image
+              src="/imgs/david_logo.png"
+              alt="David Glass Music logo"
+              width={100}            
+              height={100}            
+              className="w-full"
+              priority 
+          /> 
+        </div>
+
 
       {/* Hamburger Menu Icon (Mobile) */}
-      <div className="md:hidden cursor-pointer text-white" onClick={() => setMenuOpen(!menuOpen)}>
+      <div 
+        className="block md:hidden cursor-pointer text-white" 
+        onClick={() => setMenuOpen(!menuOpen)}
+        aria-label="Toggle menu"
+        aria-expanded={menuOpen}
+        role="button"
+        tabIndex={0} 
+        onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && setMenuOpen(!menuOpen)}
+      >
         {menuOpen ? <X size={28} /> : <Menu size={28} />}
       </div>
 
       {/* Desktop Navigation */}
       <div className="hidden md:flex gap-10">
         {links.map((link, index) => (
-          <h2 
-            key={index} 
+          <button 
+            key={index}
             className={`text-2xl text-white relative cursor-pointer font-thin after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:transition-all after:duration-300 ${
               index % 2 === 0 ? 'after:bg-white hover:after:w-full' : 'after:bg-black hover:after:w-full'
             }`} 
             onClick={() => scrollToSection(linkToRefMap[link as keyof typeof linkToRefMap])}
+            aria-label={`Navigate to ${link}`}
+            tabIndex={0} 
           >
             {link}
-          </h2>
+          </button>
         ))}
       </div>
 
@@ -66,25 +87,35 @@ export default function Navbar({ homeRef, aboutRef, videoRef, musicRef, contactR
           animate={{ x: 0 }} 
           exit={{ x: '-100%' }} 
           transition={{ duration: 0.4 }} 
-          className="fixed top-0 left-0 h-screen w-[250px] bg-zinc-900 text-white shadow-lg p-6 flex flex-col gap-6 md:hidden"
+          className="fixed top-0 left-0 h-screen w-[250px] bg-zinc-900 text-white shadow-lg p-6 flex flex-col items-start gap-6 md:hidden"
+          role="menu"
+          aria-label="Main Navigation"
         >
-          {/* Close Button */}
-          <div className="flex justify-between items-center">
-            <span className="text-xl">MENU</span>
-          </div>
+          {/* Menu Title */}
+          <div className="text-xl font-bold">MENU</div>
 
-          {/* Mobile Links */}
+          {/* Navigation Links - Left-aligned */}
           {links.map((link, index) => (
-            <h2 
+            <button 
               key={index} 
-              className="text-lg font-light cursor-pointer hover:text-gray-300 transition-all"
-              onClick={() => scrollToSection(linkToRefMap[link as keyof typeof linkToRefMap])}
+              className="text-lg font-light cursor-pointer hover:text-gray-300 transition-all pl-2"
+              onClick={() => {
+                scrollToSection(linkToRefMap[link as keyof typeof linkToRefMap]);
+                setMenuOpen(false);
+              }}
+              aria-label={`Navigate to ${link}`}
+              role="menuitem"
+              tabIndex={0} 
+              onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && scrollToSection(linkToRefMap[link as keyof typeof linkToRefMap])}
             >
               {link}
-            </h2>
+            </button>
           ))}
         </motion.div>
       )}
     </nav>
+
   );
 }
+
+// Note: ADA Compliance - aria-label, aria-expanded, onKeyDown, role
