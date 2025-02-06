@@ -7,6 +7,7 @@ import Navbar from "@/components/ui/navbar";
 import Marquee from "@/components/custom/animations/Marquee"
 import Footer from "@/components/ui/footer"
 import Head from "next/head";
+import MusicPlayer from "@/components/ui/music-player";
 
 // PAGES
 import Banner from "./pages/banner";
@@ -59,6 +60,8 @@ export default function Home() {
           </div>
         </div>
         <Footer />
+              {/* MusicPlayer is rendered globally below the footer */}
+      <MusicPlayer />
       </div>
     </div>
   );
