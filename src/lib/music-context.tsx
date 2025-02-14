@@ -123,8 +123,8 @@ const singles = [
     title: 'Honky Tonk',
     artist: 'David Glass',
     duration: '3:05',
-    filePath: '/audio/singles/HonkeyTonk.mp3',
-    imagePath: '/imgs/single_honkeytonk.png',
+    filePath: '/audio/singles/HonkyTonk.mp3',
+    imagePath: '/imgs/single_honkytonk.png',
   },
 ];
 

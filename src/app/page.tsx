@@ -1,11 +1,11 @@
 // PLUGINS
-"use client"
+"use client";
 import { useRef } from "react";
 
 // COMPONENTS
-import Navbar from "@/components/ui/navbar"; 
-import Marquee from "@/components/custom/animations/Marquee"
-import Footer from "@/components/ui/footer"
+import Navbar from "@/components/ui/navbar";
+import Marquee from "@/components/custom/animations/Marquee";
+import Footer from "@/components/ui/footer";
 import Head from "next/head";
 import MusicPlayer from "@/components/ui/music-player";
 
@@ -18,8 +18,7 @@ import Contact from "./pages/contact";
 
 // HOME (Page or App)
 export default function Home() {
-
-  // Create refs for each section for click to scroll                        
+  // Create refs for each section for click to scroll
   const homeRef = useRef<HTMLDivElement>(null!);
   const aboutRef = useRef<HTMLDivElement>(null!);
   const videoRef = useRef<HTMLDivElement>(null!);
@@ -29,9 +28,12 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1"
+        />
       </Head>
-      <Navbar 
+      <Navbar
         homeRef={homeRef}
         aboutRef={aboutRef}
         videoRef={videoRef}
@@ -40,10 +42,10 @@ export default function Home() {
       />
       <div className="flex flex-col ">
         <div ref={homeRef}>
-          <Banner /> 
+          <Banner />
         </div>
-        <div >
-          <Marquee /> 
+        <div>
+          <Marquee />
         </div>
         <div ref={aboutRef}>
           <About />
@@ -51,7 +53,13 @@ export default function Home() {
         <div ref={videoRef}>
           <Video />
         </div>
-        <div style={{backgroundImage: `linear-gradient(to bottom, rgba(161, 161, 170, 1) 0%, rgba(161, 161, 170, 0.7) 30%, rgba(228, 228, 231, 0) 80%), url('/imgs/music&contact_bg.jpg')`, backgroundSize: "cover", backgroundRepeat: "no-repeat"}}>
+        <div
+          style={{
+            backgroundImage: `linear-gradient(to bottom, rgba(161, 161, 170, 1) 0%, rgba(161, 161, 170, 0.7) 30%, rgba(228, 228, 231, 0) 80%), url('/imgs/music&contact_bg.jpg')`,
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
           <div ref={musicRef}>
             <Music />
           </div>
@@ -60,8 +68,8 @@ export default function Home() {
           </div>
         </div>
         <Footer />
-              {/* MusicPlayer is rendered globally below the footer */}
-      <MusicPlayer />
+        {/* MusicPlayer is rendered globally below the footer */}
+        <MusicPlayer />
       </div>
     </div>
   );

@@ -1,8 +1,11 @@
+// PLUGINS
 import React, { useEffect, useRef } from "react";
 
+// BANNER
 export default function Banner() {
   const bannerRef = useRef<HTMLDivElement>(null);
 
+  // Fade effect:
   useEffect(() => {
     const handleScroll = () => {
       if (!bannerRef.current) return;
@@ -10,7 +13,10 @@ export default function Banner() {
       const scrollY = window.scrollY || window.pageYOffset;
       const opacity = Math.max(0, 1 - scrollY / 400);
 
-      bannerRef.current.style.setProperty("--image-opacity", opacity.toString());
+      bannerRef.current.style.setProperty(
+        "--image-opacity",
+        opacity.toString()
+      );
     };
 
     window.addEventListener("scroll", handleScroll);

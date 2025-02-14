@@ -9,6 +9,9 @@ export default {
   ],
   theme: {
   	extend: {
+		fontFamily: {
+			cursive: ['var(--font-allura)', 'cursive'],
+		},
 		animation: {
 			marquee: "marquee 5s linear infinite",
 		  },

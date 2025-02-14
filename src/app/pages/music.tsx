@@ -1,43 +1,58 @@
-// music.tsx
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { useMusic } from '../../lib/music-context';
-import Image from 'next/image';
-import { Play, Pause, ChevronLeft, ChevronRight } from 'lucide-react';
+// PLUGINS
+import { Play, Pause, ChevronLeft, ChevronRight } from "lucide-react";
+import { useMusic } from "../../lib/music-context";
+import { useState } from "react";
+import Image from "next/image";
 
+// MUSIC
 export default function Music() {
+  const musicPlatforms = [
+    {
+      href: "https://music.apple.com/us/artist/david-glass/128439316",
+      src: "/imgs/applemusic_logo.png",
+      alt: "Apple Music Logo",
+      ariaLabel: "Listen on Apple Music",
+    },
+    {
+      href: "https://open.spotify.com/artist/0S8TYWxvKiKq8obUxwbFIA",
+      src: "/imgs/spotify_logo.png",
+      alt: "Spotify Logo",
+      ariaLabel: "Listen on Spotify",
+    },
+  ];
+
   // Destructure additional properties from the context.
-  const { 
-    currentSong, 
-    isPlaying, 
-    handlePlayPause, 
-    album, 
-    singles, 
-    setSelectedCollection, 
-    selectedCollection 
+  const {
+    currentSong,
+    isPlaying,
+    handlePlayPause,
+    album,
+    singles,
+    setSelectedCollection,
+    // selectedCollection
   } = useMusic();
 
   // Option 1: Use local state to control view if needed.
   // (Alternatively, you can use selectedCollection from context directly.)
-  const [view, setView] = useState<'album' | 'singles'>('album');
+  const [view, setView] = useState<"album" | "singles">("album");
 
   // Determine which data set and header title to use based on view state.
-  const currentList = view === 'album' ? album : singles;
-  const headerTitle = view === 'album'
-    ? 'Beginning the Journey (Album)'
-    : 'Singles';
+  const currentList = view === "album" ? album : singles;
+  const headerTitle =
+    view === "album" ? "Beginning the Journey (Album)" : "Singles";
 
   // Handler to switch to Album view.
   const switchToAlbum = () => {
-    setView('album');
-    setSelectedCollection('album'); // Update context as well.
+    setView("album");
+    setSelectedCollection("album"); // Update context as well.
   };
 
   // Handler to switch to Singles view.
   const switchToSingles = () => {
-    setView('singles');
-    setSelectedCollection('singles'); // Update context as well.
+    setView("singles");
+    setSelectedCollection("singles"); // Update context as well.
   };
 
   return (
@@ -47,17 +62,27 @@ export default function Music() {
           <div className="max-w-[1200px] w-11/12">
             <h1 className="text-2xl font-thin mb-4">Music</h1>
             <div className="flex items-center justify-between">
-              <h1 className="text-lg font-thin mb-4">{headerTitle}</h1>
+              <h2 className="text-lg font-thin mb-4" id="collection-title">
+                {headerTitle}
+              </h2>
               <div className="flex ml-2 mb-3">
-                <button onClick={switchToAlbum} className="p-1 hover:text-gray-300">
+                <button
+                  onClick={switchToAlbum}
+                  className="p-1 hover:text-gray-300"
+                  aria-label="Switch to Album view"
+                >
                   <ChevronLeft />
                 </button>
-                <button onClick={switchToSingles} className="p-1 hover:text-gray-300">
+                <button
+                  onClick={switchToSingles}
+                  className="p-1 hover:text-gray-300"
+                  aria-label="Switch to Singles view"
+                >
                   <ChevronRight />
                 </button>
               </div>
             </div>
-            <ul>
+            <ul aria-labelledby="collection-title">
               {currentList.map((song) => (
                 <li
                   key={song.filePath}
@@ -66,7 +91,7 @@ export default function Music() {
                   <div className="relative w-12 h-12 group">
                     <Image
                       src={song.imagePath}
-                      alt={song.title}
+                      alt={`Album cover for ${song.title}`}
                       width={48}
                       height={48}
                       className="rounded-md object-cover"
@@ -78,27 +103,34 @@ export default function Music() {
                       {song.artist} • {song.duration}
                     </p>
                   </div>
-                  <button className="rounded-md mr-3">
-                    <Image
-                      src="/imgs/applemusic_logo.png"
-                      alt="Apple Music Logo"
-                      width={30}
-                      height={30}
-                      className="rounded-md object-cover"
-                    />
-                  </button>
-                  <button className="rounded-md mr-3">
-                    <Image
-                      src="/imgs/spotify_logo.png"
-                      alt="Spotify Logo"
-                      width={30}
-                      height={30}
-                      className="rounded-md object-cover"
-                    />
-                  </button>
+                  {musicPlatforms.map((platform, index) => (
+                    <a
+                      key={index}
+                      href={platform.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-2"
+                      aria-label={platform.ariaLabel}
+                    >
+                      <button className="rounded-md mr-3">
+                        <Image
+                          src={platform.src}
+                          alt={platform.alt}
+                          width={30}
+                          height={30}
+                          className="rounded-md object-cover"
+                        />
+                      </button>
+                    </a>
+                  ))}
                   <button
                     onClick={() => handlePlayPause(song.filePath)}
                     className="bg-gray-800 p-2 rounded-full hover:bg-gray-700"
+                    aria-label={
+                      currentSong === song.filePath && isPlaying
+                        ? `Pause ${song.title}`
+                        : `Play ${song.title}`
+                    }
                   >
                     {currentSong === song.filePath && isPlaying ? (
                       <Pause className="w-4 h-4 text-white" />
