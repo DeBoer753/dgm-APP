@@ -7,7 +7,15 @@ import Image from "next/image";
 // ABOUT
 export default function About() {
   return (
-    <div className="flex justify-center items-center w-full pt-20 pb-10 bg-gradient-to-b from-zinc-800 to-zinc-600">
+    <div className="flex justify-center flex-col items-center w-full pt-20 pb-10 bg-gradient-to-b from-zinc-800 to-zinc-600">
+      <Image
+        src="/imgs/david_closeup.jpg"
+        alt="David Glass, a pianist and filmmaker, in a close-up portrait"
+        width={220}
+        height={160}
+        className="block sm:hidden object-cover w-[300px] sm:w-sm pb-10 [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]"
+        priority // Improves LCP by preloading
+      />
       <motion.div
         className="w-11/12 max-w-[1200px] bg-zinc-800 text-white p-5 gap-5 flex justify-center items-center sm:flex-row flex-col shadow-2xl border border-white-200"
         initial={{ opacity: 0 }}
@@ -26,14 +34,6 @@ export default function About() {
           }}
           aria-label="Close-up image of David Glass"
         ></div>
-        <Image
-          src="/imgs/david_closeup.jpg"
-          alt="David Glass, a pianist and filmmaker, in a close-up portrait"
-          width={220}
-          height={160}
-          className="block sm:hidden object-cover w-md sm:w-sm"
-          priority // Improves LCP by preloading
-        />
         <div className="flex flex-col sm:text-left text-center overflow-hidden">
           <h1 className="text-2xl px-5 font-thin">About</h1>
           <h2 className="font-bold text-xl px-5 pt-5">David Glass</h2>

@@ -38,7 +38,7 @@ export default function Video() {
 
   return (
     <>
-      <div className="flex flex-col items-center w-full pt-20 pb-20 bg-gradient-to-b from-zinc-600 to-zinc-400">
+      <div className="flex flex-col items-center w-full h-auto h-[900px] pt-20 pb-20 bg-gradient-to-b from-zinc-600 to-zinc-400">
         <motion.div
           className="flex md:flex-row flex-col justify-between max-w-[1200px] w-11/12 h-500 p-5"
           initial={{ opacity: 0 }}
@@ -66,7 +66,8 @@ export default function Video() {
             </motion.p>
           </FlexStack>
 
-          <div className="w-full flex flex-col justify-center">
+          {/* !!!!CHANGE THE HEIGHT TO STRICT PIXELS HERE IN THIS DIV BELOW AND GO FROM THERE - to fix the flickering */}
+          <div className="w-full flex flex-col md:h-[500px] h-[435px] justify-center"> 
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentIndex}
@@ -95,7 +96,7 @@ export default function Video() {
               </motion.div>
             </AnimatePresence>
 
-            <div className="flex flex-row items-center justify-center text-white pb-3 gap-10">
+            <div className="flex flex-row items-center justify-center text-white h-[100px] pb-3 gap-10">
               <button
                 onClick={handlePrev}
                 aria-label="left arrow for previous image"
