@@ -141,6 +141,7 @@ interface MusicContextType {
   handlePlayPause: (filePath: string) => void;
   handleSkipBackward: () => void;
   handleSkipForward: () => void;
+  handleSeek: (percentage: number) => void; // Add this line
   // Added properties:
   album: typeof beginningTheJourneyAlbum;
   singles: typeof singles;
@@ -231,10 +232,20 @@ export function MusicProvider({ children }: MusicProviderProps) {
     const index = currentCollection.findIndex(song => song.filePath === currentSong);
     if (index !== -1 && index < currentCollection.length - 1) {
       fadeAndSkip(currentCollection[index + 1].filePath);
+    } else {
+      fadeAndSkip(currentCollection[0].filePath); // Loop back to first song
     }
   };
 
   const currentSongDetails = currentCollection.find(song => song.filePath === currentSong);
+
+  const handleSeek = (percentage: number) => {
+    if (audioRef.current && audioRef.current.duration) {
+      const newTime = (percentage / 100) * audioRef.current.duration;
+      audioRef.current.currentTime = newTime;
+      setProgress(percentage);
+    }
+  };
 
   return (
     <MusicContext.Provider
@@ -247,6 +258,7 @@ export function MusicProvider({ children }: MusicProviderProps) {
         handlePlayPause,
         handleSkipBackward,
         handleSkipForward,
+        handleSeek,
         album: beginningTheJourneyAlbum,
         singles: singles,
         selectedCollection,
@@ -255,7 +267,7 @@ export function MusicProvider({ children }: MusicProviderProps) {
     >
       {children}
       {/* Shared audio element */}
-      <audio ref={audioRef} onTimeUpdate={handleTimeUpdate} onEnded={() => setIsPlaying(false)} />
+      <audio ref={audioRef} onTimeUpdate={handleTimeUpdate}  onEnded={handleSkipForward} />
     </MusicContext.Provider>
   );
 }
