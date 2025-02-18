@@ -66,8 +66,7 @@ export default function Video() {
             </motion.p>
           </FlexStack>
 
-          {/* !!!!CHANGE THE HEIGHT TO STRICT PIXELS HERE IN THIS DIV BELOW AND GO FROM THERE - to fix the flickering */}
-          <div className="w-full flex flex-col md:h-[500px] h-[435px] justify-center"> 
+          <div className="w-full flex flex-col md:h-[500px] h-[435px] justify-center">      {/* This divs height was added to fix flickering and also the other div below with similar comment */}
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentIndex}
@@ -96,7 +95,7 @@ export default function Video() {
               </motion.div>
             </AnimatePresence>
 
-            <div className="flex flex-row items-center justify-center text-white h-[100px] pb-3 gap-10">
+            <div className="flex flex-row items-center justify-center text-white h-[100px] pb-3 gap-10">      {/* this divs height was added to fix flickering as well*/}
               <button
                 onClick={handlePrev}
                 aria-label="left arrow for previous image"
