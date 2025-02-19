@@ -17,8 +17,8 @@ const MarqueeItemComponent = ({ images, from, to }) => {
             src={image}
             key={index}
             alt={`marquee-image-${index}`}
-            width={100} // Adjust size based on actual needs
-            height={100} // Adjust size based on actual needs
+            width={100} 
+            height={100} 
             priority // Ensures these images load first
           />
         ))}
@@ -36,8 +36,8 @@ const MarqueeItemComponent = ({ images, from, to }) => {
             src={image}
             key={index}
             alt={`marquee-image-${index}`}
-            width={100} // Adjust size based on actual needs
-            height={100} // Adjust size based on actual needs
+            width={100} 
+            height={100} 
             priority // Ensures these images load first
           />
         ))}
@@ -46,7 +46,7 @@ const MarqueeItemComponent = ({ images, from, to }) => {
   );
 };
 
-// Wrap with memo for performance optimization
+// Wrapped with memo for performance optimization. This is so the Images load faster to avoid any performance issues. As do the priority props within Image. Both increase perforamnce.
 const MarqueeItem = memo(MarqueeItemComponent);
 
 MarqueeItem.displayName = "MarqueeItem";

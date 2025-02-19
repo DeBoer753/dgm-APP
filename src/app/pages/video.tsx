@@ -44,12 +44,17 @@ export default function Video() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1, transition: { duration: 2.0 } }}
           viewport={{ once: true }}
+          aria-labelledby="video-title"
+          tabIndex={0}
         >
           <FlexStack className="justify-center text-white w-full overflow-hidden">
             <h1 className="text-2xl pt-5 px-5 font-thin text-opacity-90">
               Video
             </h1>
-            <h2 className="font-bold text-xl pt-5 px-5">Breaking Out</h2>
+            <h2 
+              className="font-bold text-xl pt-5 px-5"
+              id="video-title"
+              >Breaking Out</h2>
             <motion.p
               className="py-5 px-5"
               initial={{ x: -100 }}
@@ -63,36 +68,34 @@ export default function Video() {
             </motion.p>
           </FlexStack>
 
-          <div className="w-full flex flex-col md:h-[500px] h-[435px] justify-center">      {/* This divs height was added to fix flickering and also the other div below with similar comment */}
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={currentIndex}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.4 }}
-                aria-live="polite" // Announce image changes
-                role="img" // Ensure screen readers recognize this as an image
-                aria-label={
-                  images[currentIndex].alt ||
-                  "Slideshow image from Breaking Out music video"
-                }
-              >
-                <Image
-                  src={images[currentIndex].src}
-                  alt={
-                    images[currentIndex].alt ||
-                    "Slideshow image from Breaking Out music video"
-                  }
-                  width={300}
-                  height={160}
-                  className="rounded-md object-contain py-5 px-5 w-full"
-                  priority
-                />
-              </motion.div>
-            </AnimatePresence>
+          <div className="w-full flex flex-col md:h-[500px] h-[435px] justify-center">      {/* first div to fix flickering - This divs height was added to fix flickering and also the other div below with similar comment */}
+          <AnimatePresence mode="popLayout">
+            <motion.div
+              key={currentIndex}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.4 }}
+              aria-live="polite"
+              role="img"
+              aria-label={
+                images[currentIndex].alt ||
+                "Slideshow image from Breaking Out music video"
+              }
+            >
+              <Image
+                src={images[currentIndex].src}
+                alt={images[currentIndex].alt}
+                width={300}
+                height={160}
+                className="rounded-md object-contain py-5 px-5 w-full"
+                priority={currentIndex === 0}
+                loading="eager"
+              />
+            </motion.div>
+          </AnimatePresence>
 
-            <div className="flex flex-row items-center justify-center text-white h-[100px] pb-3 gap-10">      {/* this divs height was added to fix flickering as well*/}
+            <div className="flex flex-row items-center justify-center text-white h-[100px] pb-3 gap-10">      {/* second div to fix flickering - height was added to fix flickering as well*/}
               <button
                 onClick={handlePrev}
                 aria-label="left arrow for previous image"
