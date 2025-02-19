@@ -6,7 +6,6 @@ import { useRef } from "react";
 import Navbar from "@/components/ui/navbar";
 import Marquee from "@/components/custom/animations/Marquee";
 import Footer from "@/components/ui/footer";
-import Head from "next/head";
 import MusicPlayer from "@/components/ui/music-player";
 
 // PAGES
@@ -27,12 +26,6 @@ export default function Home() {
 
   return (
     <div>
-      <Head>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, maximum-scale=1"
-        />
-      </Head>
       <Navbar
         homeRef={homeRef}
         aboutRef={aboutRef}
