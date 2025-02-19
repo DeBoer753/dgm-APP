@@ -57,10 +57,10 @@ export default function About() {
             .
             <br />
             <br />
-            Beyond music, David is an acclaimed filmmaker, with his short film
-            Breaking Out winning over{" "}
+            Beyond music, David is an acclaimed filmmaker, with his short film 
+            <span className="italic"> &apos;Breaking Out&apos;</span> winning over {" "}
             <span className="text-yellow-500 font-bold">
-              50 awards worldwide
+            80+ awards worldwide
             </span>
             . He holds a degree in Piano Performance from the New England
             Conservatory and has been teaching piano in Piedmont, Oakland, and

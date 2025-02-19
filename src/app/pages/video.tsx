@@ -56,13 +56,10 @@ export default function Video() {
               whileInView={{ x: 0, transition: { duration: 1 } }}
               viewport={{ once: true }}
             >
-              “Breaking Out” is a short music video produced by David Glass. The
-              film is centered around a dramatic piano improvisation David
-              recorded several years ago. The short film is a psychological
-              rollercoaster containing a variety of footage that express a wide
-              range of intense emotions and strong forces of nature, and yet
-              there is a beauty to the chaos. As in a ballet, the music is in
-              synchronicity with the dramatic scenes.
+              <span className="italic">&apos;Breaking Out&apos;</span> is a visually and emotionally intense short film set to a turbulent piano improvisation, blending raw emotion, nature&apos;s forces, and synchronized imagery in a mesmerizing psychological journey.
+              <br />
+              <br />
+              As of January 17, 2024, &apos;Breaking Out&apos; has been awarded 83 wins in 56 festivals, 7 finalist, 44 Semi-Finalist, and 5 Honorable Mentions!`
             </motion.p>
           </FlexStack>
 

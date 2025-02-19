@@ -117,7 +117,7 @@ const singles = [
     artist: 'David Glass',
     duration: '8:40',
     filePath: '/audio/singles/MissingYou.mp3',
-    imagePath: '/imgs/single_gladiator.png',
+    imagePath: '/imgs/album_beginning.jpg',
   },
   {
     title: 'Honky Tonk',
