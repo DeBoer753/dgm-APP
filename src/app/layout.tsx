@@ -49,7 +49,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="w-full overflow-x-hidden">
+    <html lang="en" className="bg-zinc-800">
       <head>
         <meta
           name="viewport"
