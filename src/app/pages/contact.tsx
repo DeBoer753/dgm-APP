@@ -49,7 +49,7 @@ export default function Contact() {
         {messageSent ? (
           <div className="text-center text-white text-3xl pt-6 font-[cursive] font-bold">
             <p>Thank you!</p>
-            <p className="text-white text-xl text-center font-semibold mx-5 font-[cursive] font-bold">
+            <p className="text-white text-xl text-center font-semibold mx-5 font-[cursive] font-bold pt-5 pb-5">
               David Glass will get back to you soon.
             </p>
           </div>

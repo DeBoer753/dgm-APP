@@ -1,7 +1,7 @@
 "use client";
 
 // PLUGINS
-import { Play, Pause, ChevronLeft, ChevronRight } from "lucide-react";
+import { Play, Pause, ArrowLeftSquare, ArrowRightSquare } from "lucide-react";
 import { useMusic } from "../../lib/music-context";
 import { useState } from "react";
 import Image from "next/image";
@@ -71,14 +71,14 @@ export default function Music() {
                   className="p-1 hover:text-gray-300"
                   aria-label="Switch to Album view"
                 >
-                  <ChevronLeft />
+                  <ArrowLeftSquare size={33} />
                 </button>
                 <button
                   onClick={switchToSingles}
                   className="p-1 hover:text-gray-300"
                   aria-label="Switch to Singles view"
                 >
-                  <ChevronRight />
+                  <ArrowRightSquare size={33}/>
                 </button>
               </div>
             </div>

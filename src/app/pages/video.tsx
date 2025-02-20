@@ -1,6 +1,6 @@
 // PLUGINS
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowLeftSquare, ArrowRightSquare } from "lucide-react";
 import { useState } from "react";
 
 // COMPONENTS
@@ -106,7 +106,7 @@ export default function Video() {
                 }
                 className="h-8 w-8 cursor-pointer hover:text-gray-500"
               >
-                <ChevronLeft aria-hidden="true" />
+                <ArrowLeftSquare aria-hidden="true" size={44} />
               </button>
 
               <button
@@ -119,7 +119,7 @@ export default function Video() {
                 }
                 className="h-8 w-8 pl-1 cursor-pointer hover:text-gray-500"
               >
-                <ChevronRight aria-hidden="true" />
+                <ArrowRightSquare aria-hidden="true" size={44} />
               </button>
             </div>
           </div>
