@@ -25,7 +25,7 @@ export default function Home() {
   const contactRef = useRef<HTMLDivElement>(null!);
 
   return (
-    <div>
+     <div>
       <Navbar
         homeRef={homeRef}
         aboutRef={aboutRef}
