@@ -117,7 +117,7 @@ export default function Video() {
                 onKeyDown={(e) =>
                   (e.key === "Enter" || e.key === " ") && handleNext()
                 }
-                className="h-8 w-8 pl-1 cursor-pointer hover:text-gray-500"
+                className="h-8 w-8 cursor-pointer hover:text-gray-500"
               >
                 <ArrowRightSquare aria-hidden="true" size={44} />
               </button>
