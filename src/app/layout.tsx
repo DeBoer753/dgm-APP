@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 // ✅ Updated Metadata with Open Graph and Twitter Meta Tags
 export const metadata: Metadata = {
-  title: "David Glass Music | Bay Area Pianist, Filmmaker & Piano Teacher",
+  title: "David Glass | Bay Area Pianist, Filmmaker & Piano Teacher",
   description:
     "David Glass is a Bay Area pianist, award-winning filmmaker, and piano teacher serving Piedmont, Oakland, and Berkeley.",
   openGraph: {
