@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     title: "David Glass Music | Bay Area Pianist, Filmmaker & Piano Teacher",
     description:
       "David Glass is a Bay Area pianist, award-winning filmmaker, and piano teacher serving Piedmont, Oakland, and Berkeley.",
-    url: "https://yourwebsite.com", // Replace with your actual domain
+    url: "https://www.davidglassmusic.com/", // Replace with your actual domain
     type: "website",
     images: [
       {
