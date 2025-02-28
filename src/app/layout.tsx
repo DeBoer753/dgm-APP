@@ -14,7 +14,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// ✅ Updated Metadata with Open Graph and Twitter Meta Tags
 export const metadata: Metadata = {
   title: "David Glass | Bay Area Pianist, Filmmaker & Piano Teacher",
   description:
@@ -23,11 +22,11 @@ export const metadata: Metadata = {
     title: "David Glass Music | Bay Area Pianist, Filmmaker & Piano Teacher",
     description:
       "David Glass is a Bay Area pianist, award-winning filmmaker, and piano teacher serving Piedmont, Oakland, and Berkeley.",
-    url: "https://www.davidglassmusic.com/", // Replace with your actual domain
+    url: "https://www.davidglassmusic.com/", 
     type: "website",
     images: [
       {
-        url: "/imgs/david_blackwhite.png", // ✅ Correctly referencing your image in the public/imgs/ folder
+        url: "/imgs/david_blackwhite.png", 
         width: 1200,
         height: 630,
         alt: "David Glass playing piano in black and white",
@@ -39,7 +38,7 @@ export const metadata: Metadata = {
     title: "David Glass Music | Bay Area Pianist, Filmmaker & Piano Teacher",
     description:
       "David Glass is a Bay Area pianist, award-winning filmmaker, and piano teacher serving Piedmont, Oakland, and Berkeley.",
-    images: ["/imgs/david_blackwhite.png"], // ✅ Twitter preview image (same as Open Graph)
+    images: ["/imgs/david_blackwhite.png"], 
   },
 };
 
