@@ -55,9 +55,9 @@ export default function Music() {
 
   return (
     <>
-      <div className="py-5 pb-20 bg-zinc-800 bg-opacity-45 h-[900px] mx-auto flex items-center flex-col">
+      <div className="py-5 pb-20 bg-zinc-800 bg-opacity-45 h-[1000px] mx-auto flex items-center flex-col">
         <div className="max-w-[590px] w-11/12">
-          <h1 className="text-2xl text-white font-thin pt-12">Music</h1>
+          <h1 className="text-2xl text-white font-thin pt-20">Music</h1>
         </div>
 
         <div
