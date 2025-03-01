@@ -31,54 +31,59 @@ export default function Music() {
     album,
     singles,
     setSelectedCollection,
-    // selectedCollection
   } = useMusic();
 
-  // Option 1: Use local state to control view if needed.
-  // (Alternatively, you can use selectedCollection from context directly.)
+  // State for managing view transition
   const [view, setView] = useState<"album" | "singles">("album");
+  const [fade, setFade] = useState(false); // State to trigger fade effect
 
   // Determine which data set and header title to use based on view state.
   const currentList = view === "album" ? album : singles;
   const headerTitle =
     view === "album" ? "Beginning the Journey (Album)" : "Singles";
 
-  // Handler to switch to Album view.
-  const switchToAlbum = () => {
-    setView("album");
-    setSelectedCollection("album"); // Update context as well.
-  };
-
-  // Handler to switch to Singles view.
-  const switchToSingles = () => {
-    setView("singles");
-    setSelectedCollection("singles"); // Update context as well.
+  // Function to handle the view switch in a continuous loop
+  const handleViewSwitch = () => {
+    setFade(true); // Start fade-out effect
+    setTimeout(() => {
+      const newView = view === "album" ? "singles" : "album"; // Toggle between album and singles
+      setView(newView);
+      setSelectedCollection(newView); // Sync with context
+      setFade(false); // Start fade-in effect
+    }, 300); // Matches transition duration
   };
 
   return (
     <>
-      <div className="py-5 pb-20">
-        <div className="mx-auto flex items-center flex-col w-full max-w-2xl bg-zinc-800 bg-opacity-45 text-white p-4">
+      <div className="py-5 pb-20 bg-zinc-800 bg-opacity-45 h-[900px] mx-auto flex items-center flex-col">
+        <div className="max-w-[590px] w-11/12">
+          <h1 className="text-2xl text-white font-thin pt-12">Music</h1>
+        </div>
+
+        <div
+          className={`mx-auto flex items-center flex-col w-full max-w-2xl text-white p-4 transition-opacity duration-300 ease-in-out ${
+            fade ? "opacity-0" : "opacity-100"
+          }`}
+        >
           <div className="max-w-[1200px] w-11/12">
-            <h1 className="text-2xl font-thin mb-4">Music</h1>
             <div className="flex items-center justify-between">
               <h2 className="text-lg font-thin mb-4" id="collection-title">
                 {headerTitle}
               </h2>
               <div className="flex ml-2 mb-3">
                 <button
-                  onClick={switchToAlbum}
+                  onClick={handleViewSwitch}
                   className="p-1 hover:text-gray-300"
-                  aria-label="Switch to Album view"
+                  aria-label="Switch View"
                 >
                   <ArrowLeftSquare size={33} />
                 </button>
                 <button
-                  onClick={switchToSingles}
+                  onClick={handleViewSwitch}
                   className="p-1 hover:text-gray-300"
-                  aria-label="Switch to Singles view"
+                  aria-label="Switch View"
                 >
-                  <ArrowRightSquare size={33}/>
+                  <ArrowRightSquare size={33} />
                 </button>
               </div>
             </div>

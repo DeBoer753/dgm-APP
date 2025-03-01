@@ -53,15 +53,15 @@ export default function MusicPlayer() {
         </button>
         {/* Extended Progress Bar */}
         <div
-  className="flex-1 ml-4 h-2 bg-zinc-600 rounded-full overflow-hidden relative cursor-pointer"
-  onClick={(e) => {
-    const progressBar = e.currentTarget;
-    const clickX = e.nativeEvent.offsetX;
-    const progressBarWidth = progressBar.clientWidth;
-    const newTimePercentage = (clickX / progressBarWidth) * 100;
-    handleSeek(newTimePercentage);
-  }}
->
+          className="flex-1 ml-4 h-2 bg-zinc-600 rounded-full overflow-hidden relative cursor-pointer"
+          onClick={(e) => {
+            const progressBar = e.currentTarget;
+            const clickX = e.nativeEvent.offsetX;
+            const progressBarWidth = progressBar.clientWidth;
+            const newTimePercentage = (clickX / progressBarWidth) * 100;
+            handleSeek(newTimePercentage);
+          }}
+        >
           <div
             className="h-full bg-amber-500"
             style={{ width: `${progress}%` }}
