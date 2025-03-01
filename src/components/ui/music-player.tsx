@@ -22,7 +22,7 @@ export default function MusicPlayer() {
   } = useMusic();
 
   return (
-    <div className="sticky bottom-0 w-full bg-zinc-800 text-white p-4 flex items-center justify-between">
+    <div className="sticky bottom-0 w-full bg-zinc-800 text-white p-4 h-[80px] flex items-center justify-between">
       {/* Left Controls: Skip Buttons, Play/Pause, and Extended Progress Meter */}
       <div className="flex items-center space-x-4 flex-1">
         <button
